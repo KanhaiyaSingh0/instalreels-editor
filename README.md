@@ -1,217 +1,218 @@
-# 🎬 Instalreels Editor - AI-Powered Video Editor
+# 🎬 AI-Powered Instalreels Editor
 
-A professional Instagram Reels video editor with AI-powered features, reference video style transfer, and NVIDIA Cloud AI integration.
+The most advanced AI-powered video editing tool for creating Instagram Reels! Just describe how you want your video edited, and let artificial intelligence do the magic.
 
 ## ✨ Features
 
-### 🎯 **Core Video Editing**
-- **Reference Video Style Transfer** - Generate videos that match your reference video's exact lighting, colors, and style
-- **Multiple Output Versions** - Create energetic, cinematic, and natural versions automatically
-- **Intelligent Scene Detection** - Automatic scene analysis and timing
-- **Beat Synchronization** - Sync video cuts with music beats
-- **Instagram Reels Format** - Optimized for 9:16 aspect ratio (1080x1920)
+### 🧠 AI-Powered Editing
+- **Natural Language Instructions**: Tell the AI how you want your video edited in plain English
+- **Intelligent Content Analysis**: AI understands your photos and videos to make smart editing decisions
+- **Visual Content Recognition**: Detects faces, objects, mood, and scene types
+- **Smart Clip Ordering**: Optimally arranges your media based on content and style
 
-### 🤖 **AI-Powered Features**
-- **NVIDIA Cloud AI Integration** - Advanced AI processing without local GPU requirements
-- **Automatic Style Analysis** - Analyzes reference videos for visual characteristics
-- **Smart Lighting Correction** - Automatic brightness, contrast, and saturation adjustments
-- **Intelligent Content Understanding** - AI-powered media analysis and recommendations
+### 🎵 Advanced Audio Processing
+- **Beat Synchronization**: Automatically syncs cuts to music beats
+- **Intelligent Audio Mixing**: Smart volume balancing and audio enhancement
+- **Music-driven Editing**: Creates videos that flow with your soundtrack
 
-### 🎨 **Advanced Processing**
-- **Scene Replacement** - Replace parts of reference videos with your content
-- **Multiple Style Presets** - Energetic, Cinematic, Natural, Vibrant, Moody
-- **Custom Lighting Presets** - Create presets that exactly match reference videos
-- **Professional Transitions** - Smooth fades, zooms, and effects
+### 🎨 Professional Video Creation
+- **Multiple Editing Styles**: Energetic, Aesthetic, Cinematic, Promotional, and more
+- **Smart Transitions**: AI selects the best transitions based on content
+- **Dynamic Effects**: Ken Burns effect, speed ramping, color grading
+- **Text Overlays**: Intelligent text placement and styling
+
+### 🔄 Fallback System
+- **Traditional Mode**: Works without AI for basic editing
+- **Hybrid Intelligence**: Combines AI with computer vision for robust results
+- **Error Recovery**: Graceful handling of failed operations
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.8+
-- FFmpeg installed on your system
-- NVIDIA API key (optional, for cloud AI features)
+### Option 1: AI-Powered Setup (Recommended)
 
-### Installation
-
-1. **Clone the repository**
+1. **Clone and Setup**:
 ```bash
-git clone https://github.com/yourusername/instalreels-editor.git
+git clone <repository-url>
 cd instalreels-editor
-```
-
-2. **Create virtual environment**
-```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. **Install dependencies**
-```bash
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Set up NVIDIA API (optional)**
+2. **Setup AI (One-time)**:
 ```bash
-# Copy the example config
-cp nvidia_config.env.example nvidia_config.env
-# Edit nvidia_config.env and add your NVIDIA API key
+python setup_ai.py
 ```
+This will automatically install and configure Ollama with required AI models.
 
-### Basic Usage
-
-1. **Run the enhanced app**
+3. **Start the Editor**:
 ```bash
-python enhanced_app.py
+# Start Ollama service (in one terminal)
+ollama serve
+
+# Start the editor (in another terminal)
+python app.py
 ```
 
-2. **Upload your content**
-   - Reference video (for style matching)
-   - Photos/videos to edit
-   - Music file (optional)
+### Option 2: Traditional Mode (No AI)
 
-3. **Generate videos**
-   - Choose from multiple style versions
-   - Let AI analyze your reference video
-   - Get perfectly styled output videos
-
-## 🔧 Advanced Usage
-
-### Reference Video Style Transfer
-
-The editor automatically analyzes your reference video and applies the exact same:
-- **Lighting characteristics** (brightness, contrast)
-- **Color palette** (saturation, warmth)
-- **Visual mood** (energetic, cinematic, etc.)
-
-```python
-from src.advanced_video_processor import AdvancedVideoProcessor
-
-processor = AdvancedVideoProcessor()
-
-# Analyze reference video
-ref_analysis = processor.analyze_reference_video("reference.mp4")
-
-# Generate video with reference style
-versions = processor.generate_multiple_versions(
-    base_clips, 
-    audio_path, 
-    instruction, 
-    reference_video_path="reference.mp4"
-)
+If you prefer to use without AI features:
+```bash
+pip install -r requirements.txt
+python app.py
 ```
 
-### Custom Style Presets
+## 🎯 How to Use
 
-Create lighting presets that match your reference videos:
+### AI Mode (Recommended)
+1. **Describe Your Video**: Use natural language like:
+   - "Create an energetic gym workout video with fast cuts that sync to music"
+   - "Make a calm aesthetic slideshow with smooth fades"
+   - "Create a cinematic storytelling video with dramatic transitions"
 
-```python
-# The system automatically creates custom presets
-custom_preset = processor._create_reference_style_preset(ref_analysis)
-# Returns: brightness, contrast, saturation, warmth multipliers
+2. **Upload Your Media**: Add your photos/videos and optional music
+
+3. **Let AI Work**: The system will analyze your content and create a professional video
+
+### Example AI Instructions
+```
+🏃‍♂️ Energetic: "Create an energetic video with fast cuts and beat sync"
+🌸 Aesthetic: "Make a calm aesthetic video with smooth fades and longer transitions"
+🎬 Cinematic: "Create a storytelling video with dramatic transitions and text overlay"
+📱 Promotional: "Make a promotional video with professional cuts and branding"
+🎵 Beat Sync: "Sync all cuts perfectly to the music beats for maximum impact"
 ```
 
-## 📁 Project Structure
+## 🏗️ Architecture
+
+```
+🧠 User Instruction → AI Parser → Content Analyzer → Intelligent Editor → Final Video
+                                      ↓
+📱 Media Files → Visual AI → Scene Understanding → Smart Composition
+                                      ↓
+🎵 Audio File → Beat Detection → Rhythm Analysis → Synchronized Cuts
+```
+
+## 🛠️ Tech Stack
+
+### AI & Machine Learning
+- **Ollama**: Local LLM for instruction parsing
+- **LLaVA**: Vision-Language Model for content understanding
+- **OpenCV**: Computer vision for media analysis
+- **Librosa**: Audio processing and beat detection
+
+### Video Processing
+- **MoviePy**: Professional video editing
+- **FFmpeg**: Video codec and format handling
+- **PIL/Pillow**: Advanced image processing
+- **NumPy**: Numerical computations
+
+### Web Interface
+- **Gradio**: Modern, intuitive web UI
+- **Real-time Progress**: Live updates during processing
+
+## 📁 File Structure
 
 ```
 instalreels-editor/
-├── src/                          # Core source code
-│   ├── advanced_video_processor.py    # Main video processing engine
-│   ├── video_analyzer.py              # Video analysis and scene detection
-│   ├── audio_processor.py             # Audio processing and beat detection
-│   ├── video_generator.py             # Video generation and rendering
-│   ├── nvidia_cloud_ai_engine.py      # NVIDIA AI integration
-│   └── intelligent_video_engine.py    # AI-powered video editing
-├── input/                        # Input media files
-│   ├── media/                    # Photos and videos to edit
-│   ├── music/                    # Music files
-│   └── reference/                # Reference videos for style
-├── output/                       # Generated video outputs
-├── enhanced_app.py               # Main Gradio web interface
-├── requirements.txt              # Python dependencies
-└── README.md                     # This file
+├── 🎬 app.py                          # Main application
+├── 🧠 setup_ai.py                     # AI setup script
+├── 📋 requirements.txt                # Dependencies
+├── src/
+│   ├── 🤖 ai_instruction_parser.py    # Natural language processing
+│   ├── 👁️ visual_content_analyzer.py  # Visual AI analysis
+│   ├── 🎬 intelligent_video_engine.py # AI video creation
+│   ├── 📹 video_analyzer.py           # Traditional video analysis
+│   ├── 🎵 audio_processor.py          # Audio processing
+│   └── 🎞️ video_generator.py          # Video generation
+├── input/                             # Input files
+│   ├── media/                        # Your photos/videos
+│   ├── music/                        # Music files
+│   └── reference/                    # Reference videos
+└── output/                           # Generated videos
 ```
 
-## 🎨 Style Presets
+## 🎨 Editing Styles
 
-### **Energetic Fitness** 🏋️‍♂️
-- High brightness and saturation
-- Vibrant, warm colors
-- Perfect for gym and fitness content
+| Style | Description | Best For |
+|-------|-------------|----------|
+| **Energetic** | Fast cuts, dynamic transitions, beat sync | Fitness, sports, dance videos |
+| **Aesthetic** | Smooth fades, longer clips, artistic flow | Lifestyle, beauty, travel content |
+| **Cinematic** | Dramatic transitions, storytelling focus | Narrative content, documentaries |
+| **Promotional** | Professional cuts, text overlays | Business, product showcases |
+| **Beat Sync** | Perfect music synchronization | Music videos, dance content |
 
-### **Cinematic** 🎬
-- Dramatic lighting and high contrast
-- Rich, deep colors
-- Professional film-like appearance
+## 🔧 Advanced Configuration
 
-### **Natural** 🌿
-- Balanced, realistic lighting
-- Muted, natural colors
-- Clean, professional look
+### AI Models
+- **Text Model**: `llama3.1` (for instruction parsing)
+- **Vision Model**: `llava` (for visual analysis)
+- **Fallback**: Traditional CV methods when AI unavailable
 
-### **Vibrant** ✨
-- Ultra-bright and saturated
-- High-energy aesthetics
-- Perfect for social media
+### Performance Tuning
+```python
+# In src/intelligent_video_engine.py
+self.target_size = (1080, 1920)  # Instagram Reels format
+self.min_clip_duration = 1.0     # Minimum clip length
+self.max_clip_duration = 6.0     # Maximum clip length
+```
 
-## 🔑 NVIDIA Cloud AI Features
+## 📈 System Requirements
 
-### **What You Get**
-- **No Local GPU Required** - Pure cloud processing
-- **Advanced AI Models** - Llama 3.1, Vision models
-- **Intelligent Content Analysis** - Automatic style detection
-- **Professional Quality** - Enterprise-grade AI processing
+### Minimum
+- Python 3.8+
+- 8GB RAM
+- 2GB free disk space
+- FFmpeg installed
 
-### **Setup**
-1. Get NVIDIA API key from [build.nvidia.com](https://build.nvidia.com)
-2. Add to `nvidia_config.env`
-3. Restart the app
+### Recommended
+- Python 3.9+
+- 16GB RAM
+- GPU with 4GB VRAM (for AI acceleration)
+- SSD storage
+- Fast internet (for AI model downloads)
 
 ## 🐛 Troubleshooting
 
-### Common Issues
+### AI Issues
+```bash
+# Check Ollama status
+ollama list
 
-**"OpenCV error: Unsupported depth"**
-- Fixed in latest version
-- Ensure you have the latest code
+# Restart Ollama service
+ollama serve
 
-**"Beat detection failed"**
-- Non-critical warning
-- Videos will still generate successfully
+# Test AI connectivity
+curl http://localhost:11434/api/tags
+```
 
-**"NVIDIA API key invalid"**
-- Check your API key in `nvidia_config.env`
-- Verify NVIDIA service is available
-
-### Performance Tips
-
-- **Use SSD storage** for faster video processing
-- **Close other applications** during video generation
-- **Optimize input video size** (1080x1920 recommended)
+### Common Solutions
+- **Slow processing**: Reduce media count or resolution
+- **AI not working**: Run `python setup_ai.py` again
+- **Memory errors**: Close other applications, use fewer files
+- **Quality issues**: Use higher quality input media
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+We welcome contributions! Areas where you can help:
+
+- 🧠 **AI Improvements**: Better instruction parsing, new editing styles
+- 🎨 **Effects**: New transition types, visual effects
+- 🎵 **Audio**: Advanced beat detection, audio effects
+- 🌐 **UI/UX**: Better interface, mobile support
+- 📚 **Documentation**: Tutorials, examples
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - See LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
-- **NVIDIA Build** for cloud AI capabilities
-- **MoviePy** for video processing
-- **OpenCV** for computer vision
-- **Gradio** for the web interface
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/instalreels-editor/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/instalreels-editor/discussions)
-- **Email**: your.email@example.com
+- **Ollama**: For making local AI accessible
+- **MoviePy**: For powerful video editing capabilities
+- **Gradio**: For the beautiful web interface
+- **LLaVA**: For vision-language understanding
 
 ---
 
-**Made with ❤️ for content creators who want professional-quality videos without the complexity.**
+🎬 **Ready to create amazing videos with AI? Get started now!** 🚀
