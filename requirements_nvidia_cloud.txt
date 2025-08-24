@@ -1,0 +1,33 @@
+# NVIDIA Cloud AI Video Editor - Dependencies
+# Pure cloud processing - no local AI required!
+
+# Core video processing
+numpy>=1.21.0
+opencv-python>=4.5.3.56
+moviepy<2.0,>=1.0.3
+Pillow>=8.3.1
+librosa>=0.9.1
+scenedetect>=0.6.1
+
+# Web interface
+gradio>=3.50.0
+
+# NVIDIA Cloud API
+requests>=2.28.0
+python-dotenv>=1.0.0
+
+# Audio processing
+ffmpeg-python>=0.2.0
+python-ffmpeg>=1.0.16
+soundfile>=0.12.1
+
+# Utilities
+tqdm>=4.65.0
+pathlib2>=2.3.0
+
+# Optional: Enhanced processing
+scikit-learn>=1.0.0
+
+# Note: No local AI dependencies required!
+# No need for: torch, transformers, ollama, etc.
+# Everything runs on NVIDIA's cloud!
